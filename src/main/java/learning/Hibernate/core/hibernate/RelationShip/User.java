@@ -1,9 +1,15 @@
 package learning.Hibernate.core.hibernate.RelationShip;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,14 +21,15 @@ public class User {
 	private String email;
 	private int age;
 	
-	@OneToOne(mappedBy = "user")
-	private Address address;
+	@ManyToMany(mappedBy = "user", fetch = FetchType.EAGER)
+	private List<Address> address;
 	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int id, String name, String email, int age, Address adress) {
+
+	public User(int id, String name, String email, int age, List<Address> adress) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -68,11 +75,11 @@ public class User {
 		this.age = age;
 	}
 
-	public Address getAdress() {
+	public List<Address> getAdress() {
 		return address;
 	}
 
-	public void setAdress(Address adress) {
+	public void setAdress(List<Address> adress) {
 		this.address = adress;
 	}
 	

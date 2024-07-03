@@ -25,7 +25,7 @@ public class App
         st.setName("Kumarjit");
         st.setCity("Tarakeswar");
 	    
-	   Address ad = new Address();
+	   Address1 ad = new Address1();
 	   
 	   ad.setCity("Tarakeswar");
 	   ad.setStreet("tarakeswar Road");

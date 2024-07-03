@@ -16,7 +16,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="student_address")
-public class Address {
+public class Address1 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="address_id")
@@ -41,12 +41,12 @@ public class Address {
 	@Lob
 	private byte[] image;
 
-	public Address() {
+	public Address1() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(int id, String street, String city, boolean isOpen, double x, Date addedDate, byte[] image) {
+	public Address1(int id, String street, String city, boolean isOpen, double x, Date addedDate, byte[] image) {
 		super();
 		this.id = id;
 		this.street = street;
